@@ -53,7 +53,7 @@ const imageList: ImageData[] = [
 export default function Home() {
   return (
     <div className="mt-4 lg:mt-8 px-2 lg:px-6 bg-zinc-50 dark:bg-zinc-950">
-      <Badge>Adventure</Badge>
+      <Badge>Home</Badge>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-8">
         {imageList.map((image) => (
           <div key={image.id} className="overflow-hidden">

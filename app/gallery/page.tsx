@@ -53,7 +53,7 @@ const imageList: ImageData[] = [
 export default function Gallery() {
   return (
     <div className="mt-4 lg:mt-8 px-2 lg:px-6">
-      <Badge>Adventure</Badge>
+      <Badge>Gallery</Badge>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-8">
         {imageList.map((image) => (
           <div
