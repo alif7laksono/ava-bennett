@@ -26,12 +26,12 @@ export default function About() {
         <Badge>About</Badge>
 
         {/* Heading */}
-        <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 lg:text-5xl">
+        <h1 className="mt-4 text-4xl font-extrabold tracking-tight lg:text-5xl">
           Ava Bennett
         </h1>
 
         {/* Description */}
-        <p className="mt-6 text-lg leading-7 text-gray-700">
+        <p className="mt-6 text-lg leading-7">
           Ava Bennett is a passionate photographer known for her ability to
           capture the beauty of life&apos;s fleeting moments. Specializing in
           portrait and lifestyle photography, Ava creates timeless images that
@@ -42,7 +42,7 @@ export default function About() {
 
       {/* skills section */}
       <div className="mt-12">
-        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
           Skills & Expertise
         </h2>
         <ul className="list-[square] my-6 ml-6 [&>li]:mt-2">

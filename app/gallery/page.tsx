@@ -67,7 +67,7 @@ export default function Gallery() {
               alt={image.name}
               width={0}
               height={0}
-              className="object-cover w-full h-auto"
+              className="object-cover w-full h-auto rounded-lg"
               sizes="100vw"
               quality={75}
               // style={{ width: '100%', height: 'auto' }}
@@ -75,7 +75,7 @@ export default function Gallery() {
             />
 
             {/* Hover effect */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition duration-300">
+            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center transition duration-300">
               <p className="text-sm font-bold text-white">{image.name}</p>
               <p className="text-xs text-white">{image.source}</p>
             </div>

@@ -41,17 +41,18 @@ export default function Navbar() {
             className="p-2 rounded-md bg-transparent transition duration-300 z-50 hover:rotate-180"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-zinc-50 transition-transform duration-300" />
+              <X className="w-6 h-6 transition-transform duration-300" />
             ) : (
-              <Menu className="w-6 h-6 text-zinc-900 transition-transform duration-300" />
+              <Menu className="w-6 h-6 transition-transform duration-300" />
             )}
-          </button>
+          </button>{" "}
+         
         </div>
 
         {/* Left side (Profile Info) */}
         <div className="p-4 lg:hidden">
-          <h1 className="text-2xl font-bold text-zinc-800">Ava Bennett</h1>
-          <p className="text-sm text-zinc-600">Photographer & Writer</p>
+          <h1 className="text-2xl font-bold">Ava Bennett</h1>
+          <p className="text-sm">Photographer & Writer</p>
         </div>
       </div>
 

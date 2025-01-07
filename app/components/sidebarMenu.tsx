@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 import { Home, Image, Info, Book, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 
 const items = [
@@ -27,13 +30,14 @@ const items = [
 ];
 
 export default function SidebarMenu() {
+  const { theme, setTheme } = useTheme();
   return (
     <div>
       {/* Sidebar for large screens */}
-      <div className="hidden lg:flex h-screen max-w-sm bg-zinc-50 flex-col justify-between">
+      <div className="hidden lg:flex h-screen max-w-sm bg-zinc-50 dark:bg-zinc-950 flex-col justify-between">
         <div className="flex flex-col px-6 py-10">
-          <h1 className="text-2xl font-bold text-zinc-800">Ava Bennett</h1>
-          <p className="text-sm text-zinc-600">Photographer & Writer</p>
+          <h1 className="text-2xl font-bold">Ava Bennett</h1>
+          <p className="text-sm">Photographer & Writer</p>
           <small className="text-sm font-medium leading-6 mt-4 lg:mt-10">
             Ava Bennett is a passionate photographer known for her ability to
             capture the beauty of life&apos;s fleeting moments.
@@ -46,7 +50,7 @@ export default function SidebarMenu() {
               <li key={item.title} className="w-full">
                 <a
                   href={item.url}
-                  className="flex items-center space-x-3 text-zinc-800 hover:text-zinc-600"
+                  className="flex items-center space-x-3"
                 >
                   <item.icon className="w-5 h-5" />
                   <span className="text-sm font-medium">{item.title}</span>
@@ -65,16 +69,27 @@ export default function SidebarMenu() {
         </div>
 
         <footer className="flex items-center justify-start gap-2 px-6 py-10">
-          <p className="text-sm text-zinc-500">© 2025 Website by</p>
+          <p className="text-sm">© 2025 Website by</p>
           <Link
             href="https://github.com/alif7laksono"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-700 underline"
+            className="underline"
           >
             AlifLaksono
           </Link>
         </footer>
+      </div>
+      <div className="fixed bottom-6 right-6 z-20">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
+          <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
+          <Moon className="hidden h-5 w-5 dark:block" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
       </div>
     </div>
   );

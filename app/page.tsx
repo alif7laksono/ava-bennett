@@ -31,13 +31,13 @@ const imageList: ImageData[] = [
     img: "/pexels-quentin-guiot.jpg",
   },
   {
-    id: 5,
+    id: 4,
     name: "Mathew Thomas",
     source: "Pexels",
     img: "/pexels-mathew-thomas.jpg",
   },
   {
-    id: 4,
+    id: 5,
     name: "Suliman Sallehi",
     source: "Pexels",
     img: "/pexels-sulimansallehi.jpg",
@@ -52,7 +52,7 @@ const imageList: ImageData[] = [
 
 export default function Home() {
   return (
-    <div className="mt-4 lg:mt-8 px-2 lg:px-6">
+    <div className="mt-4 lg:mt-8 px-2 lg:px-6 bg-zinc-50 dark:bg-zinc-950">
       <Badge>Adventure</Badge>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-8">
         {imageList.map((image) => (
@@ -63,7 +63,7 @@ export default function Home() {
               alt={image.name}
               width={0}
               height={0}
-              className="object-cover w-full h-auto"
+              className="object-cover w-full h-auto rounded-lg"
               sizes="100vw"
               quality={75}
               style={{ aspectRatio: "auto", objectFit: "cover" }}
@@ -72,7 +72,7 @@ export default function Home() {
             {/* Image name and source */}
             <div className="mt-2 text-center">
               <p className="text-sm font-bold">{image.name}</p>
-              <p className="text-xs text-gray-500">{image.source}</p>
+              <p className="text-xs">{image.source}</p>
             </div>
           </div>
         ))}
