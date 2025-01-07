@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="mt-8 lg:mt-12 px-6 lg:px-12">
+    <div className="mt-4 lg:mt-8 px-6 lg:px-12">
       {/* Hero Image */}
       <div className="relative w-full h-64 lg:h-96 overflow-hidden rounded-lg">
         <Image
