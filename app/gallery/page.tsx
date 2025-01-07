@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import Masonry from "react-masonry-css";
 
 // Define the image type
 type ImageData = {
@@ -51,16 +53,21 @@ const imageList: ImageData[] = [
 ];
 
 export default function Gallery() {
+  const breakpointColumnsObj = {
+    default: 3, // 3 columns on large screens
+    1024: 2, // 2 columns on medium screens
+    768: 1, // 1 column on small screens
+  };
   return (
     <div className="mt-4 lg:mt-8 px-2 lg:px-6">
       <Badge>Gallery</Badge>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-8">
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="flex -ml-4 w-auto" // Custom masonry class
+        columnClassName="pl-4 bg-clip-padding" // Space between columns
+      >
         {imageList.map((image) => (
-          <div
-            key={image.id}
-            className="relative group overflow-hidden"
-            style={{ height: "auto" }}
-          >
+          <div key={image.id} className="relative group overflow-hidden my-4">
             <Image
               src={image.img}
               alt={image.name}
@@ -69,8 +76,7 @@ export default function Gallery() {
               className="object-cover w-full h-auto rounded-lg"
               sizes="100vw"
               quality={75}
-              // style={{ width: '100%', height: 'auto' }}
-              style={{ aspectRatio: "400/300", objectFit: "cover" }}
+              style={{ aspectRatio: "300/400", objectFit: "cover" }}
             />
 
             {/* Hover effect */}
@@ -80,7 +86,7 @@ export default function Gallery() {
             </div>
           </div>
         ))}
-      </div>
+      </Masonry>
     </div>
   );
 }

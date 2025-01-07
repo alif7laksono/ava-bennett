@@ -1,11 +1,33 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="mt-8 px-6 lg:px-12">
+    <div className="mt-4 lg:mt-8 px-2 lg:px-6">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Capturing Emotions: Portrait Photography Tips
       </h1>
+      <div className="text-center items-center my-4 lg:my-6">
+        <Image
+          src="/pexels-julieaagaard.jpg"
+          alt="mathew-thomas pexels"
+          width={0}
+          height={0}
+          className="object-top w-full h-auto rounded-lg"
+          sizes="100vw"
+          quality={75}
+          style={{ aspectRatio: "300/400", objectFit: "cover" }}
+        />
+        <Link
+          href="https://www.pexels.com/photo/woman-standing-on-the-cliff-1374064/"
+          target="_blank"
+        >
+          <small className="mt-3 italic font-bold hover:opacity-50">
+            Image by Pexels Julie Aagaard
+          </small>
+        </Link>
+      </div>
       <div className="prose prose-zinc dark:prose-invert max-w-none mt-4">
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           Portrait photography is an art that goes beyond just capturing faces.

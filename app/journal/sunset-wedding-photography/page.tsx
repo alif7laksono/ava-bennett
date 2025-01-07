@@ -1,11 +1,33 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="mt-8 px-6 lg:px-12">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <div className="mt-4 lg:mt-8 px-2 lg:px-6">
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center lg:text-left">
         The Magic of Sunset Wedding Photography
       </h1>
+      <div className="text-center items-center my-4 lg:my-6">
+        <Image
+          src="/pexels-mathew-thomas.jpg"
+          alt="mathew-thomas pexels"
+          width={0}
+          height={0}
+          className="object-cover w-full h-96 rounded-lg"
+          sizes="100vw"
+          quality={75}
+          style={{ aspectRatio: "300/400", objectFit: "cover" }}
+        />
+        <Link
+          href="https://www.pexels.com/@mathew-thomas-318779/"
+          target="_blank"
+        >
+          <small className="mt-3 italic font-bold hover:opacity-50">
+            Image by pexels mathew-thomas
+          </small>
+        </Link>
+      </div>
       <div className="prose prose-zinc dark:prose-invert max-w-none mt-4">
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           Weddings are magical moments filled with love, joy, and beautiful
