@@ -1,3 +1,5 @@
+// app/journal/page.tsx
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
@@ -66,7 +68,7 @@ const blogPosts: BlogPost[] = [
 
 export default function Journal() {
   return (
-    <div className="mt-8 px-6 lg:px-12">
+    <div className="mt-4 lg:mt-8 px-2 lg:px-6">
       <h1 className="text-4xl font-extrabold tracking-tight mb-6">Journal</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {blogPosts.map((post) => (

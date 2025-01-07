@@ -35,8 +35,10 @@ export default function SidebarMenu() {
     <div>
       {/* Sidebar for large screens */}
       <div className="hidden lg:flex h-screen max-w-sm bg-zinc-50 dark:bg-zinc-950 flex-col justify-between">
-        <div className="flex flex-col px-6 py-10">
-          <h1 className="text-2xl font-bold">Ava Bennett</h1>
+        <div className="flex flex-col px-12 py-10">
+          <Link href="/">
+            <h1 className="text-2xl font-bold">Ava Bennett</h1>
+          </Link>{" "}
           <p className="text-sm">Photographer & Writer</p>
           <small className="text-sm font-medium leading-6 mt-4 lg:mt-10">
             Ava Bennett is a passionate photographer known for her ability to
@@ -45,7 +47,7 @@ export default function SidebarMenu() {
         </div>
 
         <div className="flex-1 flex flex-col justify-center items-start">
-          <ul className="space-y-4 w-full px-6">
+          <ul className="space-y-4 w-full px-12">
             {items.map((item) => (
               <li key={item.title} className="w-full">
                 <a href={item.url} className="flex items-center space-x-3">
@@ -55,7 +57,7 @@ export default function SidebarMenu() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 px-6">
+          <div className="mt-6 px-12">
             <Link href="/contact">
               <Button variant="default">
                 <Mail className="mr-2 w-5 h-5" />
@@ -65,7 +67,7 @@ export default function SidebarMenu() {
           </div>
         </div>
 
-        <footer className="flex items-center justify-start gap-2 px-6 py-10">
+        <footer className="flex items-center justify-start gap-2 px-12 py-10">
           <p className="text-sm">© 2025 Website by</p>
           <Link
             href="https://github.com/alif7laksono"

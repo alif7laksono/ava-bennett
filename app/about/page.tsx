@@ -35,8 +35,7 @@ const skills: Skill[] = [
     title: "Natural Light Work",
     expertise: "Advanced",
     icon: <Sun className="w-6 h-6 text-purple-500" />,
-    description:
-      "Proficient in utilizing natural light and studio setups.",
+    description: "Proficient in utilizing natural light and studio setups.",
   },
 ];
 
