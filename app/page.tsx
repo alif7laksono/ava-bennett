@@ -57,7 +57,6 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4 lg:mt-8">
         {imageList.map((image) => (
           <div key={image.id} className="overflow-hidden">
-            {/* Display the image */}
             <Image
               src={image.img}
               alt={image.name}

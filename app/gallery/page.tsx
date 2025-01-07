@@ -61,7 +61,6 @@ export default function Gallery() {
             className="relative group overflow-hidden"
             style={{ height: "auto" }}
           >
-            {/* Display the image */}
             <Image
               src={image.img}
               alt={image.name}

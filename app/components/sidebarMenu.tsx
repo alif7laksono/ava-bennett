@@ -48,10 +48,7 @@ export default function SidebarMenu() {
           <ul className="space-y-4 w-full px-6">
             {items.map((item) => (
               <li key={item.title} className="w-full">
-                <a
-                  href={item.url}
-                  className="flex items-center space-x-3"
-                >
+                <a href={item.url} className="flex items-center space-x-3">
                   <item.icon className="w-5 h-5" />
                   <span className="text-sm font-medium">{item.title}</span>
                 </a>
@@ -82,7 +79,7 @@ export default function SidebarMenu() {
       </div>
       <div className="fixed bottom-6 right-6 z-20">
         <Button
-          variant="ghost"
+          variant="outline"
           size="icon"
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
