@@ -1,16 +1,12 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
-import { FaPinterestP, FaTwitter, FaInstagram } from "react-icons/fa6";
+import { FaPinterestP, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa6";
 
 export default function Contact() {
   return (
     <div className="mt-4 lg:mt-8 px-2 lg:px-6">
-      <Badge>Contact Us</Badge>
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mt-4">
-        Contact Ava Bennett
-      </h1>
-
+      <Badge>Contact Ava Bennett</Badge>
       <p className="leading-7 mt-4">
         At Ava Bennett Photography, every frame tells a story, and every story
         deserves to be shared. Whether you&apos;re looking to capture your
@@ -73,6 +69,10 @@ export default function Contact() {
           <a href="#" className="flex items-center space-x-2">
             <FaPinterestP className="w-5 h-5 text-gray-500" />
             <span>Pinterest</span>
+          </a>
+          <a href="#" className="flex items-center space-x-2">
+            <FaGlobe className="w-5 h-5 text-gray-500" />
+            <span>Pexels</span>
           </a>
         </div>
       </div>
