@@ -1,15 +1,16 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Masonry from "react-masonry-css";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 // Define the image type
 type ImageData = {
   id: number;
   name: string;
   source: string;
-  img: string; // Change to string because we're using static paths
+  img: string; // Static paths for images
 };
 
 // Image data array
@@ -53,21 +54,49 @@ const imageList: ImageData[] = [
 ];
 
 export default function Gallery() {
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+
+  const openImage = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const closeModal = () => {
+    setCurrentIndex(null);
+  };
+
+  const showPrevious = () => {
+    setCurrentIndex((prev) =>
+      prev !== null ? (prev === 0 ? imageList.length - 1 : prev - 1) : null
+    );
+  };
+
+  const showNext = () => {
+    setCurrentIndex((prev) =>
+      prev !== null ? (prev === imageList.length - 1 ? 0 : prev + 1) : null
+    );
+  };
+
   const breakpointColumnsObj = {
     default: 3, // 3 columns on large screens
     1024: 2, // 2 columns on medium screens
     768: 1, // 1 column on small screens
   };
+
   return (
     <div className="mt-4 lg:mt-8 px-2 lg:px-6">
       <Badge>Gallery</Badge>
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="flex -ml-4 w-auto" // Custom masonry class
-        columnClassName="pl-4 bg-clip-padding" // Space between columns
+        className="flex -ml-4 w-auto"
+        columnClassName="pl-4 bg-clip-padding"
       >
-        {imageList.map((image) => (
-          <div key={image.id} className="relative group overflow-hidden my-4">
+        {imageList.map((image, index) => (
+          <div
+            key={image.id}
+            className="relative group overflow-hidden my-4 cursor-zoom-in"
+            onClick={() => openImage(index)}
+          >
+            {/* Image */}
             <Image
               src={image.img}
               alt={image.name}
@@ -87,6 +116,43 @@ export default function Gallery() {
           </div>
         ))}
       </Masonry>
+
+      {/* Modal */}
+      {currentIndex !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center">
+          {/* Close button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 text-white text-xl p-2 bg-black bg-opacity-50 rounded-full z-50"
+          >
+            <X />
+          </button>
+
+          {/* Navigation */}
+          <button
+            onClick={showPrevious}
+            className="absolute left-4 text-white p-2 bg-black bg-opacity-50 rounded-full z-50"
+          >
+            <ChevronLeft />
+          </button>
+          {/* Image */}
+          <div className="flex justify-center items-center w-auto h-auto">
+            <Image
+              src={imageList[currentIndex].img}
+              alt={imageList[currentIndex].name}
+              fill
+              className="object-contain rounded-lg p-10"
+              sizes="100vw"
+            />
+          </div>
+          <button
+            onClick={showNext}
+            className="absolute right-4 text-white p-2 bg-black bg-opacity-50 rounded-full"
+          >
+            <ChevronRight />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
