@@ -66,18 +66,6 @@ export default function SidebarMenu() {
             </Link>
           </div>
         </div>
-
-        <footer className="flex items-center justify-start gap-2 px-12 py-10">
-          <p className="text-sm">© 2025 Website by</p>
-          <Link
-            href="https://github.com/alif7laksono"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            AlifLaksono
-          </Link>
-        </footer>
       </div>
       <div className="fixed bottom-6 right-6 z-20">
         <Button
