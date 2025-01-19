@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Home, Image, Info, Book, Mail } from "lucide-react";
+import { Home, Image, Info, Book, Mail, Quote, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -13,9 +13,19 @@ const items = [
     icon: Home,
   },
   {
+    title: "Scroll Parallax",
+    url: "/scroll",
+    icon: ImageOff,
+  },
+  {
     title: "Gallery",
     url: "/gallery",
     icon: Image,
+  },
+  {
+    title: "Testimonials",
+    url: "/testimonials",
+    icon: Quote,
   },
   {
     title: "About",

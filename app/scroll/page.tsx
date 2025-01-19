@@ -1,9 +1,4 @@
-"use client";
 import { ParallaxScroll } from "@/components/ui/parallax-scroll";
-
-export default function ParallaxScrollDemo() {
-  return <ParallaxScroll images={images} />;
-}
 
 const images = [
   "https://images.unsplash.com/photo-1733421797526-d64daa8e0249?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -23,3 +18,7 @@ const images = [
   "https://images.unsplash.com/photo-1563362554-5b521e37aa2a?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1727548099918-fa8da52df671?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
+
+export default function ParallaxScrollDemo() {
+  return <ParallaxScroll images={images} />;
+}

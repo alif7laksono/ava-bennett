@@ -16,6 +16,16 @@ const items = [
     icon: Image,
   },
   {
+    title: "Testimonials",
+    url: "/testimonials",
+    icon: Image,
+  },
+  {
+    title: "Scroll Parallax",
+    url: "/scroll",
+    icon: Image,
+  },
+  {
     title: "About",
     url: "/about",
     icon: Info,
@@ -31,7 +41,7 @@ export default function Navbar() {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="relative z-50 shadow-md">
+    <div className="relative shadow-md z-50">
       {/* style these divs. make them side by side */}
       <div className="flex justify-between items-start">
         {/* Right side (Menu Button) */}
