@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Home, Image, Info, Book, Mail, Quote, ImageOff } from "lucide-react";
+import { Home, Image, Info, Book, Mail, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
@@ -22,11 +22,11 @@ const items = [
     url: "/gallery",
     icon: Image,
   },
-  {
-    title: "Testimonials",
-    url: "/testimonials",
-    icon: Quote,
-  },
+  // {
+  //   title: "Testimonials",
+  //   url: "/testimonials",
+  //   icon: Quote,
+  // },
   {
     title: "About",
     url: "/about",
@@ -36,6 +36,11 @@ const items = [
     title: "Journal",
     url: "/journal",
     icon: Book,
+  },
+  {
+    title: "Contact Us",
+    url: "/contact",
+    icon: Mail,
   },
 ];
 
@@ -67,14 +72,6 @@ export default function SidebarMenu() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 px-12">
-            <Link href="/contact">
-              <Button variant="default">
-                <Mail className="mr-2 w-5 h-5" />
-                Contact Us
-              </Button>
-            </Link>
-          </div>
         </div>
       </div>
       <div className="fixed bottom-6 right-6 z-20">
